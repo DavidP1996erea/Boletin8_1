@@ -1,4 +1,4 @@
-package principal;
+package Ejercicio1;
 
 public class miArray {
 
@@ -98,65 +98,105 @@ public class miArray {
 
         int puesto = 0;
         int tamano = 0;
+        int contador=0;
 
         for (int o = 0; o < array.length; o++) {
 
-            if (comprobarPrimo(array)==true) {
-                tamano++;
-            }
+           for(int k=1; k<=array[o];k++){
+
+               if(array[o]%k==0){
+                   contador++;
+               }
+
+           }
+           if(contador==2){
+               tamano++;
+
+           }
+            contador=0;
         }
 
         int[] array2 = new int[tamano];
 
         for (int i = 0; i < array.length; i++) {
 
-            if (comprobarPrimo(array)==true) {
+            for(int j=1; j<=array[i];j++){
 
+                if(array[i]%j==0){
+                    contador++;
+                }
+
+            }
+            if(contador==2){
                 array2[puesto] = array[i];
                 puesto++;
             }
+            contador=0;
+
         }
 
-        for (int j : array2) {
+        for (int l : array2) {
 
-            System.out.println(j);
+            System.out.println(l);
 
         }
 
     }
 
-    public static boolean comprobarPrimo(int [] array) {
-
-        int contador=0;
-
-        for(int i=0; i<array.length ;i++) {
-
-            while (contador <= array[i]) {
 
 
-                if (array[i] % i == 0) {
+    public static void alReves(int [] array){
 
-                    contador++;
+       int [] array2 = new int[array.length];
+       int puesto=0;
 
-                }
+        for(int i=19; i>-1; i--){
 
-            }
+            array2[puesto]=array[i];
 
-            if (contador < 2) {
-                return false;
+            puesto++;
+
+        }
+
+        for(int k:array2){
+            System.out.println(k);
+        }
+
+
+    }
+
+
+
+    public static int posicionArray(int [] array, int numero) {
+
+        int aleatorio = (int) Math.round(Math.random() * 19 + 1);
+        int i = 0;
+
+        for (int j = 0; j < array.length; j++) {
+
+            if (comprobarNumero(aleatorio, array) == true) {
+
+                array[j] = aleatorio;
             } else {
-                return true;
+                j--;
             }
-
+            aleatorio = (int) Math.round(Math.random() * 19 + 1);
 
         }
 
 
+        while (i < array.length) {
+
+            if (array[i] == numero) {
+
+                return i;
+
+            }
+            i++;
+
+        }
+        return -1;
 
 
-
-
+    }
 }// fin
-
-
-
