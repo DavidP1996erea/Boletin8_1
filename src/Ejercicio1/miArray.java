@@ -7,7 +7,7 @@ public class miArray {
 
         for (int i = 0; i < array.length; i++) {
 
-            array[i] = (int) Math.round(Math.random() * 19 + 1);
+            array[i] = (int)Math.round(Math.random() * 19 + 1);
         }
 
 

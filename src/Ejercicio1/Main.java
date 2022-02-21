@@ -12,7 +12,7 @@ public class Main {
         int [] array2 = new int[20];
 
         cargarArray(array1);
-
+        arrayPar(array1);
 /*
         for (int e : array2){
 
