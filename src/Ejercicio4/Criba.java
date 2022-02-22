@@ -1,6 +1,5 @@
 package Ejercicio4;
 
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class Criba {
@@ -54,7 +53,7 @@ public class Criba {
         for (int o = 0; o <= numero; o++) {
 
             for(int j=0; j <arrayCriba.length;j++)
-            if (Arrays.asList(arrayCriba).contains(3 * o)==true) {
+            if (3*o != arrayCriba[j] || 5*o != arrayCriba[j] || 7*o != arrayCriba[j]) {
                 tamano++;
             }
         }
@@ -68,10 +67,12 @@ public class Criba {
 
                 for(int j=0; j <arrayCriba.length;j++){
 
-                    if (Arrays.asList(arrayCriba).contains(3 * i)==true) {
+                    if (3*i != arrayCriba[j] || 5*i != arrayCriba[j] || 7*i != arrayCriba[j]) {
                         array2[puesto]=arrayCriba[j];
                         puesto++;
                     }
+
+
             }
 
         }
