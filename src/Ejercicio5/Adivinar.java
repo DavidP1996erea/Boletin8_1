@@ -15,12 +15,27 @@ public class Adivinar {
     }
 
 
-    public static void comprobarNumero(int [] adivinar){
+    public static void comprobarNumero(int [] adivinar, String numero){
 
 
-        System.out.print( convertir(adivinar));
+      for (int i=0; i<adivinar.length;i++){
+
+
+          for (int j=0; j<4;j++){
+
+              if((convertir(adivinar).charAt(i)==numero.charAt(j)) ){
+
+                  System.out.print("0");
+              }
+
+
+          }
+      }
 
     }
+
+
+
 
 
     public static String convertir(int [] adivinar){

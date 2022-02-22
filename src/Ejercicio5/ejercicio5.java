@@ -17,7 +17,7 @@ public class ejercicio5 {
         }
 
         System.out.println();
-        comprobarNumero(adivinar);
+        comprobarNumero(adivinar, "4587");
 
 
     }
