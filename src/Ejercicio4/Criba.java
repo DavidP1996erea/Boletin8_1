@@ -1,5 +1,6 @@
 package Ejercicio4;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Criba {
@@ -13,7 +14,8 @@ public class Criba {
 
         llenarArray(arrayCriba, numero);
 
-        return arrayCriba;
+
+        return cargarArrayPrimos(llenarArray(arrayCriba, numero), numero);
     }
 
 
@@ -30,7 +32,7 @@ public class Criba {
 
     }
 
-    public static void llenarArray(int [] arrayCriba, int numero){
+    public static int [] llenarArray(int [] arrayCriba, int numero){
         int puesto = 0;
 
         for(int j =0; j<=numero;j++) {
@@ -40,8 +42,45 @@ public class Criba {
                 puesto++;
             }
         }
+
+        return arrayCriba;
     }
 
 
-    
+    public static int [] cargarArrayPrimos(int [] arrayCriba, int numero){
+
+        int tamano=0;
+        int puesto=0;
+        for (int o = 0; o <= numero; o++) {
+
+            for(int j=0; j <arrayCriba.length;j++)
+            if (Arrays.asList(arrayCriba).contains(3 * o)==true) {
+                tamano++;
+            }
+        }
+
+
+
+        int [] array2 = new int[tamano];
+
+
+        for(int i = 0; i<numero;i++){
+
+                for(int j=0; j <arrayCriba.length;j++){
+
+                    if (Arrays.asList(arrayCriba).contains(3 * i)==true) {
+                        array2[puesto]=arrayCriba[j];
+                        puesto++;
+                    }
+            }
+
+        }
+
+        return array2;
+
+
+
+
+    }
+
 }
