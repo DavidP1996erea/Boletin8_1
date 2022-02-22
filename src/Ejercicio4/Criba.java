@@ -1,10 +1,11 @@
 package Ejercicio4;
 
 import java.util.Scanner;
-
+import java.util.Arrays;
 public class Criba {
 
     public static int [] crearArray(){
+
         Scanner sc = new Scanner(System.in);
         System.out.println("Introduzca hasta que número quiere calcular los primos");
         int numero=sc.nextInt();
@@ -34,7 +35,7 @@ public class Criba {
     public static int [] llenarArray(int [] arrayCriba, int numero){
         int puesto = 0;
 
-        for(int j =0; j<=numero;j++) {
+        for(int j =3; j<=numero;j++) {
 
             if (j % 2 != 0) {
                 arrayCriba[puesto]=j;
@@ -46,42 +47,44 @@ public class Criba {
     }
 
 
-    public static int [] cargarArrayPrimos(int [] arrayCriba, int numero){
+    public static int [] cargarArrayPrimos(int [] arrayCriba, int numero) {
 
-        int tamano=0;
+        int contador=0;
         int puesto=0;
-        for (int o = 0; o <= numero; o++) {
 
-            for(int j=0; j <arrayCriba.length;j++)
-            if (3*o != arrayCriba[j] || 5*o != arrayCriba[j] || 7*o != arrayCriba[j]) {
-                tamano++;
+        for(int i=0; i<arrayCriba.length;i++){
+
+            for (int j=2; j<numero;j++){
+
+                if(3*j == arrayCriba[i]|| 5*j == arrayCriba[i] || 7*j == arrayCriba[i]){
+
+                    arrayCriba[i]=0;
+                    contador++;
+                }
             }
         }
 
+        int [] arrayPrimos = new int[arrayCriba.length-contador-1];
 
+        for(int k=0; k<arrayCriba.length;k++){
 
-        int [] array2 = new int[tamano];
+            if(arrayCriba[k]!=0) {
 
-
-        for(int i = 0; i<numero;i++){
-
-                for(int j=0; j <arrayCriba.length;j++){
-
-                    if (3*i != arrayCriba[j] || 5*i != arrayCriba[j] || 7*i != arrayCriba[j]) {
-                        array2[puesto]=arrayCriba[j];
-                        puesto++;
-                    }
-
+                arrayPrimos[puesto]=arrayCriba[k];
+                puesto++;
 
             }
-
         }
 
-        return array2;
+        return arrayPrimos;
+
+        }
 
 
 
 
     }
 
-}
+
+
+
