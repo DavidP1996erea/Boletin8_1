@@ -6,7 +6,6 @@ public class ejercicio5 {
 
     public static void main(String[] args) {
 
-
         int[] adivinar = new int[4];
 
 
@@ -17,7 +16,7 @@ public class ejercicio5 {
         }
 
         System.out.println();
-        comprobarNumero(adivinar, "4587");
+        jugar(adivinar);
 
 
     }
